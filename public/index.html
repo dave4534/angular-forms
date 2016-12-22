@@ -3,15 +3,31 @@
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-app="besttodo" ng-controller="controller">
-<div class="col-md-6">
-  <h1>Best ToDo</h1>
+<!-- <div class="col-md-6">
+  <h1>Angular Forms (With BestToDo)</h1>
 
 <div class="taskList" ng-repeat="task in tasks">{{task}}</div>
 
 <input ng-model="input" class="input-group form-control" placeholder="Type task">
 <button class="btn" ng-click="addTask()">Add Task</button>
+ -->
+<hr>
+<p>Showing how to console log a user with a function tied to the submit button (upon clicking save)</p>
+<form name="myForm" ng-submit="myForm.$valid && printUser(user)">
+  Name: <input type="text" ng-model="user.name" ng-minlength=3 required /><br />
+  E-mail: <input type="email" ng-model="user.email" /><br />
+  <p>ng-min and ng-max define the VALUE of the number, not the length of the number string.</p>
+  Phone: <input type="text" ng-model="user.phone" ng-pattern="/^[0-9]*$/" ng-minlength=10 ng-maxlength=10 /><br />
+  Age: <input type="number" ng-model="user.pet" ng-min=16 ng-max=130 required /><br />
+  <input  type="submit" value="Save" />
+</form>  
+
+<hr> 
+
+
 </div>
 <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
 <script type="text/javascript" src="app.js"></script>
